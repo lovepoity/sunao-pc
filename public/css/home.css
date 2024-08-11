@@ -1,0 +1,311 @@
+/* CONTAIER */
+.container {
+  margin: 0 auto;
+  width: 1200px;
+  max-width: 100%;
+  display: flex;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* CONTENT */
+.content {
+  width: 75%;
+}
+.product__title {
+  position: relative;
+  font-weight: 700;
+  font-size: 2.1rem;
+  margin: 20px 0;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+.product__title div {
+  margin-left: 10px;
+}
+.product__title .fa-list {
+  cursor: pointer;
+  position: absolute;
+  top: -5%;
+  right: 10px;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+/* ----------------------------------------------------------------------------- */
+/* ANIMATION */
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.2;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* ----------------------------------------------------------------------------- */
+/* BANNER */
+.banner {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  padding: 8px 10px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  background-color: white;
+  position: relative;
+}
+.banner img {
+  width: 100%;
+  border-radius: 5px;
+}
+.product__title {
+  grid-column: 1 / -1; /* Phần tử chiếm hết 1 row */
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  padding: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.8rem;
+  transition: 0.3s ease;
+  border-radius: 5px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 15px;
+}
+.prev {
+  left: 15px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: #f7f7f7;
+  color: black;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* PRODUCT */
+.product {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+/* ----------------------------------------------------------------------------- */
+/* PRODUCT__ITEM */
+.product__item {
+  min-height: 300px;
+  border-radius: 5px;
+  padding: 10px;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 25%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+.product__item:hover {
+  background-color: #f7f9fc;
+}
+.product__item img {
+  cursor: pointer;
+  width: 100%;
+  height: 160px;
+  margin-bottom: 5px;
+}
+.product__item a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: inline-block;
+  height: 50px;
+  text-align: left;
+  padding: 0 10px;
+}
+.product__item p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: red;
+  font-weight: 500;
+  text-align: left;
+  padding: 0 10px;
+}
+.product__item input[type="submit"] {
+  width: 100%;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  background-color: #f7f9fc;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.product__item input[type="submit"]:hover {
+  color: black;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(59, 89, 152, 0.1);
+}
+/* ----------------------------------------------------------------------------- */
+/* ENDOW */
+.endow {
+  margin: 0 auto;
+  width: 1200px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.endow__1 {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-bottom: 20px;
+}
+.endow__1 p {
+  margin: 20px 20px 0 20px;
+  padding-bottom: 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+.endow__2 {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.endow__2 img {
+  border-radius: 5px;
+  width: 280px;
+  cursor: pointer;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 25%;
+}
+.endow__2 img:hover {
+  filter: brightness(80%);
+}
+
+/* ----------------------------------------------------------------------------- */
+/* RESPONSIVE HOME */
+@media screen and (max-width: 768px) {
+  header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header__logo img {
+    height: 100%;
+    margin-right: 5px;
+  }
+  header ul {
+    display: none;
+  }
+  .header__cart {
+    display: none;
+  }
+  .header__search {
+    display: none;
+  }
+  .text__bar {
+    padding: 0 10px;
+  }
+  .banner {
+    display: none;
+  }
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .content {
+    width: 100%;
+    padding: 10px;
+  }
+  .product {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  #account {
+    width: 400px;
+    margin-top: -30px;
+    margin-bottom: 0;
+    margin-left: -20px;
+  }
+  #top10,
+  #menu {
+    display: none;
+  }
+  .endow {
+    text-align: center;
+    padding: 0 10px;
+  }
+  .endow__2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .endow__2 img {
+    width: 175px;
+  }
+  .footer__top {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .footer__bottom {
+    height: auto;
+    flex-direction: column;
+  }
+  .footer__bottom__left {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .footer__bottom__middle,
+  .footer__bottom__right {
+    display: none;
+  }
+  .footer__box {
+    display: none;
+  }
+  .footer__box--last {
+    display: block;
+  }
+  .product__item a {
+    height: 70px;
+  }
+}
+/* ----------------------------------------------------------------------------- */
+/* END */
+
+.pagination a {
+  margin: 10px auto 20px auto;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.pagination a.active {
+  background-color: #8b9dc3;
+  color: white;
+}
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
